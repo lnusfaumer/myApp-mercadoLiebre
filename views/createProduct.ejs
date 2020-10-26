@@ -8,20 +8,28 @@
       <div class="p-10px">
             <a href="/products"> Volver a lista de productos</a>
       </div>
-      <div class="p-40px">
-            <form action="/products/store" method="POST">
-
-                  <label for="">Nombre</label>
-                  <input type="text" name="name" value="">
-      
-                  <label for="">Descripcion</label>
-                  <input type="text" name="description" value="">
-      
-                  <label for="">Precio</label>
-                  <input type="text" name="precio" value="">
-      
-                  <label for="">Categoria</label>
-                  <input type="text" name="category" value="">
+      <div class="p-40px width-30 d-flex flex-dr">
+            <form action="/products" method="POST" enctype="multipart/form-data">
+                  <div>
+                        <label for="">Nombre</label>
+                        <input type="text" name="name" value="">
+                  </div>
+                  <div>
+                        <label for="">Descripcion</label>
+                        <input type="text" name="description" value="">
+                  </div>
+                  <div>
+                        <label for="">Precio</label>
+                        <input type="text" name="precio" value="">
+                  </div>
+                  <div>
+                        <label for="">Categoria</label>
+                        <input type="text" name="category" value="">
+                  </div>
+                  <div>
+                        <label for="">Foto</label>
+                        <input type="file" name="image">
+                  </div>
       
                   <button type="submit">Confirmar nuevo producto</button>
       

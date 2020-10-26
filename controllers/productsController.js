@@ -23,17 +23,17 @@ const productsController = {
   },
 
   actualizar: function (req, res) {
-    res.send('fui por put')
+    res.send('El envio por PUT se realizo con exito')
   },
   delete: function (req, res) {
-    res.send('Estoy en DELETE')
+    res.send('El envio por DELETE ')
   },
 
   create: function (req, res) {
     res.render('createProduct', { title: 'Mercado Liebre', cantidad: productsList.length + 1 })
   },
 
-  store: function (req, res) {
+  store: function (req, res, next) {
 
     let pathFile = path.join('data','productsDataBase.json')
 
@@ -43,7 +43,8 @@ const productsController = {
 
     nuevoProduct.push({
       ...req.body,
-      id: nuevoProduct[nuevoProduct.length - 1].id + 1
+      id: nuevoProduct[nuevoProduct.length - 1].id + 1,
+      image: req.files[0].filename
     })
 
     nuevoProduct = JSON.stringify(nuevoProduct)
