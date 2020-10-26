@@ -1,0 +1,35 @@
+<html lang="en">
+
+      <%- include('./partials/head')%>
+      
+<body>
+      <div>
+            <a href="/products"> Volver a lista de productos</a>
+      </div>
+      <section class="d-flex flex-dr  text-c">
+            <article class="width-30">
+                  <div class="d-flex">
+                        <h3><%= nombre%></h3>
+                  </div>
+                    <div class="d-flex w-100">
+                          <img class="img-size" src="/images/products/<%= foto %>" alt="">
+                    </div>
+                    <div class="d-flex  text-c">
+                          <h2>Descripcion del producto:</h2> 
+                          <h3><%= descripcion%></h3>
+                    </div>
+                    
+                    <div class="d-flex jc-center">
+                          <form action="/products/delete/<%= idDetail%>?_method=DELETE" method="POST">
+                                <button type="submit">Borrar</button>
+                          </form>
+                          <form action="/products/edit/<%= idDetail%>">
+                                <button>Modificar</button>
+                          </form>
+                          
+                    </div>
+            </article>
+            
+      </section>    
+</body>
+</html>

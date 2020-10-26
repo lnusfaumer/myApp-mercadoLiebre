@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <%- include('./partials/head')%>
+
+<body>
+      <h1>Crear el producto numero <%= cantidad %> </h1>
+      <div class="p-10px">
+            <a href="/products"> Volver a lista de productos</a>
+      </div>
+      <div class="p-40px">
+            <form action="/products/store" method="POST">
+
+                  <label for="">Nombre</label>
+                  <input type="text" name="name" value="">
+      
+                  <label for="">Descripcion</label>
+                  <input type="text" name="description" value="">
+      
+                  <label for="">Precio</label>
+                  <input type="text" name="precio" value="">
+      
+                  <label for="">Categoria</label>
+                  <input type="text" name="category" value="">
+      
+                  <button type="submit">Confirmar nuevo producto</button>
+      
+            </form>
+
+      </div>
+      
+     
+</body>
+
+</html>
