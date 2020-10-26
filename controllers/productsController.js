@@ -35,9 +35,9 @@ const productsController = {
 
   store: function (req, res) {
 
-    // let pathFile = path.dirname('./data/productsDataBase.json')
+    let pathFile = path.join('data','productsDataBase.json')
 
-    let nuevoProduct = fs.readFileSync('./data/productsDataBase.json', { encoding: 'utf-8' })
+    let nuevoProduct = fs.readFileSync(pathFile, { encoding: 'utf-8' })
 
     nuevoProduct = JSON.parse(nuevoProduct)
 
@@ -48,11 +48,9 @@ const productsController = {
 
     nuevoProduct = JSON.stringify(nuevoProduct)
 
-    fs.writeFileSync('./data/productsDataBase.json', nuevoProduct)
+    fs.writeFileSync(pathFile, nuevoProduct)
 
-
-
-    res.send('Su producto fue creado con exito!!')
+    res.redirect('/products')
   }
 
 
