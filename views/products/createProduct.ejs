@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <%- include('../partials/head')%>
+
+<body>
+      <h1>Crear un nuevo producto</h1>
+      <div class="p-10px">
+            <a href="/products"> Volver a lista de productos</a>
+      </div>
+      <div class="p-40px d-flex flex-dr">
+            <form class="d-flex flex-dr" action="/products" method="POST" enctype="multipart/form-data">
+                  <div class="p-20px">
+                        <label for="">Nombre</label>
+                        <input type="text" name="name" value="<%= data.name%>">
+                        <% if(errors.name != undefined) {   %>
+                        <p><%= errors.name.msg %></p>
+                        <% } %>
+                  </div>
+                  <div class="p-20px">
+                        <label for="">Descripcion</label>
+                        <input type="text" name="description" value="">
+                  </div>
+                  <div class="p-20px">
+                        <label for="">Precio</label>
+                        <input type="text" name="price" value="<%= data.price%>">
+                        <% if(errors.price != undefined) {   %>
+                              <p><%= errors.price.msg %></p>
+                              <% } %>
+                  </div>
+                  <div class="p-20px">
+                        <label for="">Stock</label>
+                        <input type="text" name="stock" value="<%= data.stock%>">
+                        <% if(errors.stock != undefined) {   %>
+                              <p><%= errors.stock.msg %></p>
+                              <% } %>
+                  </div>
+                  <div class="p-20px">
+                        <label for="">Categoria</label>
+                        <%- include('../partials/select', {
+                              name: 'category',
+                              options: [
+                                        {value: 'In-sale', text : 'In-sale'},
+                                        {value: 'Visited', text : 'Visited'},
+                                        {value: 'Otras', text : 'Otras'},
+                              ]
+                        })%>
+                          <% if(errors.category != undefined) {   %>
+                              <p><%= errors.category.msg %></p>
+                              <% } %>
+
+                  </div>
+                  <div class="p-20px">
+                        <label for="">Foto</label>
+                        <input type="file" name="image" value="">
+                  </div>
+      
+                  <button class="width-50" type="submit">Confirmar nuevo producto</button>
+      
+            </form>
+
+      </div>
+      
+     
+</body>
+
+</html>

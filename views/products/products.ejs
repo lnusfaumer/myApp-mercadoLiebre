@@ -1,0 +1,29 @@
+<html lang="en">
+
+ <%- include('../partials/head')%>
+
+<body>
+      <h1>Todos los productos</h1>
+      <form class="p-10px" action="/products/create" method="GET">
+            <button class="boton d-flex" >Crear nuevo producto</button>
+        </form>
+        <div class="p-10px">
+            <a href="/">ir al Home</a> 
+        </div>
+        <div>
+            <ul>
+                  <% let category = lista.map(function(items) { 
+                        %>
+                        <li class="d-flex p-10px" >
+                              <div class="p-10px"><h3><%= items.name   %> </h3></div>
+                              
+                              <div class="p-10px"><a href="  /products/<%= items.id   %>">Ir al detalle</a></div>
+                              
+                        </li> 
+                      <% }) %>
+            </ul>
+        </div>
+      
+      
+</body>
+</html>

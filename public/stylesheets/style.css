@@ -1,24 +1,57 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px;
 }
 
-a {
-  color: #00B7FF;
-  padding: 0px 8px;
-}
+
 li {
   list-style: none;
-  padding: 8px;
 }
 
-.d-flex{display: flex; flex-wrap: wrap;}
+.d-flex{display: flex;}
+.d-wrap{flex-wrap: wrap;}
 .flex-dr{flex-direction: column ;}
+.width-50{width: 50%;}
 .width-30{width: 30%;}
 .text-c{text-align: center;}
+.jc-betwn{justify-content: space-around ;}
 .jc-center{justify-content: center;}
 .p-10px{padding: 10px;}
 .p-40px{padding: 40px;}
+.p-20px{padding: 20px;}
+.border{border: 1px solid black;}
+.mg-bottom{margin-bottom: 10px ;}
+.mg-top10{margin-top:10px ;}
+
+.boton {
+  padding: 10px;
+  margin: 8px;
+  border: 1px solid rgb(96, 187, 230) ;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  
+  text-align: center;
+  color: rgb(96, 187, 230);;
+}
+.boton:hover{
+  color: white;
+  background-color:rgb(96, 187, 230) ;
+}
+a {
+  color: rgb(96, 187, 230);
+  text-decoration: none;
+}
+
+.formulario{
+  width: 40%;
+  margin: auto;
+  align-content: center;
+  padding: 30px;
+  border-radius: 13px;
+}
 
 
 .img-size{width: 250px;}

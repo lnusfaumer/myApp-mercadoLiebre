@@ -152,11 +152,11 @@
     "image": "image-1603697773933.jpeg"
   },
   {
-    "name": "otra guitarra",
-    "description": "tambien estuche",
-    "precio": "3000",
-    "category": "guitarras",
-    "id": 18,
-    "image": "image-1603697812510.jpeg"
+    "name": "alguno",
+    "description": "",
+    "price": "34",
+    "stock": "3",
+    "category": "Visited",
+    "id": 18
   }
 ]

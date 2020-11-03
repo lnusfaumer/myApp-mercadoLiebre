@@ -1,25 +1,26 @@
 const productsList = require('../data/productsDataBase')
 const fs = require('fs')
 const path = require('path')
+const {validationResult} = require('express-validator')
 
 const productsController = {
 
   product: function (req, res, next) {
-    res.render('products', { title: 'Mercado Liebre', lista: productsList })
+    res.render('products/products', { lista: productsList })
   },
 
   detailProduct: function (req, res, next) {
-    res.render('detailProduct', {
-      title: 'Mercado Liebre', idDetail: productsList[req.params.id - 1].id, nombre: productsList[req.params.id - 1].name,
-      descripcion: productsList[req.params.id - 1].description,
-      foto: productsList[req.params.id - 1].image, cantidad: productsList.length + 1
+    let dato = productsList[req.params.id - 1]
+    res.render('products/detailProduct', { idDetail: dato.id, nombre: dato.name,
+      descripcion: dato.description,
+      foto: dato.image, cantidad: productsList.length + 1, precio: dato.price, categoria: dato.category
     })
   },
 
   edit: function (req, res, next) {
     let idProduct = req.params.id
     let productToEdit = productsList[idProduct - 1]
-    res.render('editProduct', { title: 'Mercado Liebre', idProduct: idProduct, productToEdit: productToEdit })
+    res.render('products/editProduct', { idProduct: idProduct, productToEdit: productToEdit })
   },
 
   actualizar: function (req, res) {
@@ -30,21 +31,41 @@ const productsController = {
   },
 
   create: function (req, res) {
-    res.render('createProduct', { title: 'Mercado Liebre', cantidad: productsList.length + 1 })
+    res.render('products/createProduct', { title: 'Mercado Liebre', 
+    data:{},
+    errors: {},
+  })
+
   },
 
   store: function (req, res, next) {
+
+    // verificar el resultado de la validacion
+
+    let errors = validationResult(req)
+
+    if(!errors.isEmpty() ){
+      return res.render('products/createProduct', {
+        errors: errors.mapped(),
+        data : req.body,
+      })
+    }
+
+      // Traer products.json a una variable
 
     let pathFile = path.join('data','productsDataBase.json')
 
     let nuevoProduct = fs.readFileSync(pathFile, { encoding: 'utf-8' })
 
+    // Convertir el string en array/json 
     nuevoProduct = JSON.parse(nuevoProduct)
+
+   // agregar al array el producto nuevo
 
     nuevoProduct.push({
       ...req.body,
       id: nuevoProduct[nuevoProduct.length - 1].id + 1,
-      image: req.files[0].filename
+      image: req.files[0].filename 
     })
 
     nuevoProduct = JSON.stringify(nuevoProduct)
@@ -53,8 +74,6 @@ const productsController = {
 
     res.redirect('/products')
   }
-
-
 }
 
 

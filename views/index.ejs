@@ -4,39 +4,37 @@
  <%- include('./partials/head')%>
 
   <body>
-    <h1>Mercado Liebre</h1>
-    <p>Welcome to Mercado Liebre</p>
-    <div>
-      <a href="/products"> Ir a lista de productos</a>
-    </div>
-
-    <section class="visited d-flex">
-      
-      <h2 >Productos visitados</h2>
-      <ul class="d-flex flex-dr">
-
-        <% let category = lista.map(function(items) { 
-          if ( items.category == "visited"){ 
-          %>
-          <li class="d-flex" ><%= items.name   %> <a href="  /products/<%= items.id   %>">Ir al detalle</a></li> 
-        <%  }})%>
-
-      </ul>
-    </section>
     
-    <section class="ofertas">
-      
-      <h2>Ofertas</h2>
-      <ul>
-        <% let oferta = lista.map(function(items) { 
-          if ( items.category == "in-sale"){
-          %>
-        <li><%= items.name  %> <a href="  /products/<%= items.id   %>">Ir al detalle</a> </li> 
-        <%  }})%>
-        
-      </ul>
-    </section>
-
+    <%- include('./partials/header')%>
     
+    <main class="d-flex d-wrap jc-betwn">
+      <section class="visited border p-20px">
+        <h2 >Productos visitados</h2>
+        <ul>
+          <% let category = lista.map(function(items) { 
+            if ( items.category == "visited"){ 
+            %>
+            <li class="p-20px" > 
+              <p><%= items.name   %></p>
+              <a href="  /products/<%= items.id   %>">Ir al detalle</a></li> 
+          <%  }})%>
+        </ul>
+      </section>
+      
+      <section class="ofertas border p-20px">
+        <h2>Ofertas</h2>
+        <ul>
+          <% let oferta = lista.map(function(items) { 
+            if ( items.category == "in-sale"){
+            %>
+          <li class="p-20px">
+            <p><%= items.name  %> </p>
+            <a href="  /products/<%= items.id   %>">Ir al detalle</a>
+          </li> 
+          <%  }})%>
+        </ul>
+      </section>
+
+    </main>
   </body>
 </html>
