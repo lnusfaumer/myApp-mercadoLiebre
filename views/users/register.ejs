@@ -8,17 +8,33 @@
                   <form class="d-flex flex-dr" action="/users" method="POST">
                         <div class="p-10px">
                               <label for="">Nombre:</label>
-                              <input type="text" name="name">
+                              <input type="text" name="name" value="<%= data.name%>">
+                              <% if(errors.name != undefined) {   %>
+                                    <p class="text-red"><%= errors.name.msg %></p>
+                                    <% } %>
                         </div>
 
                         <div class="p-10px">
                               <label for="">Email:</label>
-                              <input type="email" name="email">
+                              <input type="email" name="email" value="<%= data.email%>">
+                              <% if(errors.email != undefined) {   %>
+                                    <p class="text-red"><%= errors.email.msg %></p>
+                                    <% } %>
                         </div>
 
                         <div class="p-10px">
                               <label for="">Contraseña:</label>
-                              <input type="password" name="passworld">
+                              <input type="password" name="password" value="<%= data.password%>">
+                              <% if(errors.password != undefined) {   %>
+                                    <p class="text-red"><%= errors.password.msg %></p>
+                                    <% } %>
+                        </div>
+                        <div class="p-10px">
+                              <label for="">Repetir contraseña:</label>
+                              <input type="password" name="passwordRepeat" value="<%= data.passwordRepeat%>">
+                              <% if(errors.passwordRepeat != undefined) {   %>
+                                    <p class="text-red"><%= errors.passwordRepeat.msg %></p>
+                                    <% } %>
                         </div>
             
                         <button class="boton" type="submit">Enviar registro</button>

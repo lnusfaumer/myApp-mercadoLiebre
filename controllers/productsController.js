@@ -11,9 +11,10 @@ const productsController = {
 
   detailProduct: function (req, res, next) {
     let dato = productsList[req.params.id - 1]
+    
     res.render('products/detailProduct', { idDetail: dato.id, nombre: dato.name,
-      descripcion: dato.description,
-      foto: dato.image, cantidad: productsList.length + 1, precio: dato.price, categoria: dato.category
+      descripcion: dato.description, foto: dato.image, cantidad: productsList.length + 1, precio: dato.price, 
+      categoria: dato.category
     })
   },
 

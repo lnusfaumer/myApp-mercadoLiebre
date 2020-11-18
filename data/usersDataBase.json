@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Alguno",
+    "email": "señor@gmail.com",
+    "password": "123456"
+  },
+  {
+    "name": "leonel",
+    "email": "leonel@gmail.com",
+    "password": "$2b$10$bSXKg6qlnLo6Ldfz..Z3WeXv8J6Ry5a04pici0T1JcfmRkyeTEo2i",
+    "id": 2
+  },
+  {
+    "name": "",
+    "email": "re@gmail.com",
+    "password": "$2b$10$vwyjf6/sqqqKl3S8dedT.eg6Lu/Cv6wdkDqu82A9p3sb.zICk/gKi",
+    "passwordRepeat": "12345678",
+    "id": 3
+  },
+  {
+    "name": "nuevo registro",
+    "email": "nuevo3@gmail.com",
+    "password": "$2b$10$XEMM2C/l7Y5BPmJ3jT0J5uMa0rWp9tOSDo0Ky8pirXMQtAeK60VZC",
+    "passwordRepeat": "12345678",
+    "id": 4
+  }
+]

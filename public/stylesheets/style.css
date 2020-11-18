@@ -24,6 +24,8 @@ li {
 .border{border: 1px solid black;}
 .mg-bottom{margin-bottom: 10px ;}
 .mg-top10{margin-top:10px ;}
+.upper{text-transform: uppercase;}
+.text-red{color: red;}
 
 .boton {
   padding: 10px;

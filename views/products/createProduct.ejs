@@ -53,6 +53,9 @@
                   <div class="p-20px">
                         <label for="">Foto</label>
                         <input type="file" name="image" value="">
+                        <% if(errors.image != undefined) {   %>
+                              <p><%= errors.image.msg %></p>
+                              <% } %>
                   </div>
       
                   <button class="width-50" type="submit">Confirmar nuevo producto</button>

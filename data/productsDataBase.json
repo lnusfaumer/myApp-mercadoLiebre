@@ -158,5 +158,14 @@
     "stock": "3",
     "category": "Visited",
     "id": 18
+  },
+  {
+    "name": "bicicleta",
+    "description": "akajajaj",
+    "price": "12",
+    "stock": "2",
+    "category": "Visited",
+    "id": 19,
+    "image": "image-1604530833594.jpeg"
   }
 ]
